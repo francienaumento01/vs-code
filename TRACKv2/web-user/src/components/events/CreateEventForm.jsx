@@ -50,49 +50,49 @@ export default function CreateEventForm() {
       </div>
       <div className={styles.sectionContent}>
         <div className={styles.section}>
-<div className={styles.row}>
-  <div className={styles.col}>
-    <EventColor
-      value={event.color}
-      onChange={(colorValue) => updateField("color", colorValue)}
-    />
-  </div>
-</div>
+          <div className={styles.row}>
             <div className={styles.col}>
-              <div className={styles.label}>VISIBILITY OF EVENT</div>
-              <RadioGroup
-                name="visibility"
-                options={[
-                  { value: "campus", label: "Campus" },
-                  { value: "department", label: "Department" },
-                  { value: "personal", label: "Personal" },
-                ]}
-                value={event.visibility}
-                onChange={(e) => updateField("visibility", e.target.value)}
+              <EventColor
+                value={event.color}
+                onChange={(colorValue) => updateField("color", colorValue)}
               />
             </div>
+          </div>
+          <div className={styles.col}>
+            <div className={styles.label}>VISIBILITY OF EVENT</div>
+            <RadioGroup
+              name="visibility"
+              options={[
+                { value: "campus", label: "Campus" },
+                { value: "department", label: "Department" },
+                { value: "personal", label: "Personal" },
+              ]}
+              value={event.visibility}
+              onChange={(e) => updateField("visibility", e.target.value)}
+            />
+          </div>
 
+          <div className={styles.col}>
+            <div className={styles.label}>METHOD</div>
+            <RadioGroup
+              name="method"
+              options={[
+                { value: "face-to-face", label: "Face to Face" },
+                { value: "online", label: "Online" },
+              ]}
+              value={event.method}
+              onChange={(e) => updateField("method", e.target.value)}
+            />
+          </div>
+          {event.method === "online" && (
             <div className={styles.col}>
-              <div className={styles.label}>METHOD</div>
-              <RadioGroup
-                name="method"
-                options={[
-                  { value: "face-to-face", label: "Face to Face" },
-                  { value: "online", label: "Online" },
-                ]}
-                value={event.method}
-                onChange={(e) => updateField("method", e.target.value)}
+              <InputField
+                label="EVENT LINK"
+                value={event.link}
+                onChange={(e) => updateField("link", e.target.value)}
               />
             </div>
-            {event.method === "online" && (
-              <div className={styles.col}>
-                <InputField
-                  label="EVENT LINK"
-                  value={event.link}
-                  onChange={(e) => updateField("link", e.target.value)}
-                />
-              </div>
-            )}
+          )}
 
           <div className={styles.row}>
             <SelectDropdown

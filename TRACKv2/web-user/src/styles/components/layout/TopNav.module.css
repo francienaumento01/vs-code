@@ -4,7 +4,9 @@
   justify-content: space-between;
   padding: 18px 24px;
   background: var(--fifth-color);
-  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .leftSideContainer {
   display: flex;
@@ -35,7 +37,9 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  color: var(--tertiary-color);
   justify-content: center;
+  font-weight: 600;
 }
 .iconButton svg {
   width: 20px;

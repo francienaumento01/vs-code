@@ -20,6 +20,7 @@
   padding: 2.5rem;
   width: 100%;
   background: grey;
+  height: 150px;
 }
 .titleInput::placeholder {
   color: var(--fourth-color);
@@ -34,6 +35,9 @@
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .label {
@@ -46,6 +50,7 @@
 .row {
   display: flex;
   gap: 1rem;
+
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
@@ -53,6 +58,7 @@
 .col {
   flex: 1;
   min-width: 150px;
+  
 }
 
 .actions {
@@ -60,4 +66,10 @@
   justify-content: flex-end;
   gap: 1rem;
   margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
 }

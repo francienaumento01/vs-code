@@ -36,13 +36,17 @@ export default function TopNav({
   // Create/Edit variant (default)
   return (
     <nav className={styles.topNav}>
-      <button className={styles.iconButton} onClick={onBack}>
-        <MdArrowBack /> Back
-      </button>
-      <h2 className={styles.title}>{title}</h2>
-      <button className={styles.iconButton} onClick={onSave}>
-        Save
-      </button>
+      <div className={styles.leftSideContainer}>
+        <button className={styles.iconButton} onClick={onBack}>
+          <MdArrowBack />
+        </button>
+        <h2 className={styles.title}>{title}</h2>
+      </div>
+      <div className={styles.rightSideContainer}>
+        <button className={styles.iconButton} onClick={onSave}>
+          Save
+        </button>
+      </div>
     </nav>
   );
 }
